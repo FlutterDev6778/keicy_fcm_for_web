@@ -5,8 +5,8 @@ import 'package:firebase/firebase.dart' as firebase;
 import 'package:flutter/material.dart';
 
 class KeicyFCMForWeb {
-  final KeicyFCMForWeb _instance = KeicyFCMForWeb();
-  KeicyFCMForWeb get instance => _instance;
+  static final KeicyFCMForWeb _instance = KeicyFCMForWeb();
+  static KeicyFCMForWeb get instance => _instance;
 
   firebase.Messaging _fcm;
   String _token;
