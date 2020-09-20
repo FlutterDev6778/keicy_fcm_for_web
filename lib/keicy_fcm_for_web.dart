@@ -29,7 +29,7 @@ class KeicyFCMForWeb {
       print("event.notification.body:   ${event.notification.body}");
       print("event.notification.icon:   ${event.notification.icon}");
       print("event.notification.clickAction:   ${event.notification.clickAction}");
-      _controller.add(event?.data);
+      _controller.add({"title": event.notification.title, "body": "event.notification.body"});
     });
   }
 
