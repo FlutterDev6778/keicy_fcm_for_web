@@ -8,7 +8,7 @@ class KeicyFCMForWeb {
   static final KeicyFCMForWeb _instance = KeicyFCMForWeb();
   static KeicyFCMForWeb get instance => _instance;
 
-  final firebase.Messaging _fcm = firebase.messaging();
+  firebase.Messaging _fcm = firebase.messaging();
   String _token;
 
   final _controller = StreamController<Map<String, dynamic>>.broadcast();
