@@ -8,7 +8,7 @@ class KeicyFCMForWeb {
   static final KeicyFCMForWeb _instance = KeicyFCMForWeb();
   static KeicyFCMForWeb get instance => _instance;
 
-  firebase.Messaging _fcm;
+  final firebase.Messaging _fcm = firebase.messaging();
   String _token;
 
   final _controller = StreamController<Map<String, dynamic>>.broadcast();
@@ -19,7 +19,6 @@ class KeicyFCMForWeb {
   }
 
   Future<void> init({@required String key}) async {
-    _fcm = firebase.messaging();
     _fcm.usePublicVapidKey(key);
     _fcm.onMessage.listen((firebase.Payload event) {
       print("event.collapseKey:   ${event.collapseKey}");
